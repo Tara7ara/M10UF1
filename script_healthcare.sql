@@ -87,26 +87,18 @@ VALUES
 	('Anemia', 'Fatiga, debilidad, piel pálida', 'Una condición en la que no hay suficientes glóbulos rojos en el cuerpo', 0),
 	('Presión arterial alta', 'Dolor de cabeza, visión borrosa', 'Una condición en la que la fuerza de la sangre contra las paredes de las arterias es demasiado alta', 0);
 
-SELECT doctor FROM doctors WHERE id_doctor=1;
--- Output: Doctor Videla
+INSERT INTO diagnoses (diagnosis, id_doctor, id_user, id_condition)
+VALUES
+  ('Tienes gripe', 1, 1, 1),
+  ('Tienes diabetes', 2, 2, 2),
+  ('Tienes cancer', 1, 1, 3),
+  ('Tienes depresion', 2, 3, 4);
 
-SELECT doctor FROM doctors WHERE id_doctor=2;
--- Output: Doctora Ristol
-
-SELECT condition, description FROM condition WHERE id_condition=1;
--- Output: Gripe | Una enfermedad respiratoria común
-
-SELECT condition, description FROM condition WHERE id_condition=2;
--- Output: Diabetes | Un trastorno metabólico
-
-SELECT condition, description FROM condition WHERE id_condition=3;
--- Output: Cáncer | Un grupo de enfermedades caracterizadas por el crecimiento anormal de células
-
-SELECT condition, description FROM condition WHERE id_condition=4;
--- Output: Depresión | Un trastorno del estado de ánimo
-
-SELECT condition, description FROM condition WHERE id_condition=5;
--- Output: Anemia | Una condición en la que no hay suficientes glóbulos rojos en el cuerpo
-
-SELECT condition, description FROM condition WHERE id_condition=6;
--- Output: Presión arterial alta | Una condición en la que la fuerza de la sangre contra las paredes de las arterias es demasiado alta
+INSERT INTO treatments (id_diagnosis)
+VALUES
+  (1),
+  (2),
+  (3),
+  (4),
+  (2),
+  (4);
