@@ -1,0 +1,35 @@
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+  	id_user INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT
+);
+
+DROP TABLE IF EXISTS users_cosp;
+CREATE TABLE users_cosp (
+  	id_user_cosp INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_user INT UNSIGNED
+);
+
+DROP TABLE IF EXISTS cosp;
+CREATE TABLE cosp (
+        id_cosp INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        id_user_cosp INT UNSIGNED
+);
+
+DROP TABLE IF EXISTS iluminatis;
+CREATE TABLE cosp (
+        id_user_iluminatis INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        id_user INT UNSIGNED
+);
+
+--Lo que teniamos antes
+--CREATE TABLE users (
+--	id_user BIGINT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+--	username VARCHAR(64) NOT NULL,
+-- 	email VARCHAR(128) NOT NULL,
+--	`password` VARCHAR(32) NOT NULL,
+--	gender CHAR(1) NOT NULL,
+--	country CHAR(3) NOT NULL,
+--	birth_date DATE NOT NULL,
+--	created_at DATETIME NOT NULL
+--);
+
